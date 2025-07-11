@@ -1,0 +1,44 @@
+
+
+// ========================================
+// UTILITIES
+// ========================================
+
+// MARGIN & PADDING UTILITIES
+@for $i from 0 through 5 {
+  .m-#{$i} { margin: $i * 0.25rem !important; }
+  .mt-#{$i} { margin-top: $i * 0.25rem !important; }
+  .mb-#{$i} { margin-bottom: $i * 0.25rem !important; }
+  .ml-#{$i} { margin-left: $i * 0.25rem !important; }
+  .mr-#{$i} { margin-right: $i * 0.25rem !important; }
+
+  .p-#{$i} { padding: $i * 0.25rem !important; }
+  .pt-#{$i} { padding-top: $i * 0.25rem !important; }
+  .pb-#{$i} { padding-bottom: $i * 0.25rem !important; }
+  .pl-#{$i} { padding-left: $i * 0.25rem !important; }
+  .pr-#{$i} { padding-right: $i * 0.25rem !important; }
+}
+
+// DISPLAY UTILITIES
+.d-block { display: block !important; }
+.d-inline { display: inline !important; }
+.d-inline-block { display: inline-block !important; }
+.d-flex { display: flex !important; }
+.d-none { display: none !important; }
+
+// TEXT ALIGNMENT
+.text-left { text-align: left !important; }
+.text-center { text-align: center !important; }
+.text-right { text-align: right !important; }
+
+// FLOAT UTILITIES
+.float-left { float: left !important; }
+.float-right { float: right !important; }
+.float-none { float: none !important; }
+
+// CLEARFIX
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
