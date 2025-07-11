@@ -1,0 +1,29 @@
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -$spacer / 2;
+  margin-right: -$spacer / 2;
+}
+
+[class*="col-"] {
+  padding-left: $spacer / 2;
+  padding-right: $spacer / 2;
+}
+
+@for $i from 1 through 12 {
+  .col-#{$i} {
+    flex: 0 0 percentage($i / 12);
+    max-width: percentage($i / 12);
+  }
+}
+
+@each $breakpoint, $value in $breakpoints {
+  @media (min-width: $value) {
+    @for $i from 1 through 12 {
+      .col-#{$breakpoint}-#{$i} {
+        flex: 0 0 percentage($i / 12);
+        max-width: percentage($i / 12);
+      }
+    }
+  }
+}
