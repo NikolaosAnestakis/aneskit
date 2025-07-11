@@ -1,0 +1,58 @@
+
+
+// ========================================
+// TYPOGRAPHY
+// ========================================
+
+// BASE
+body {
+  font-family: $font-base;
+  font-size: $font-size-base;
+  line-height: 1.5;
+  color: $dark;
+  background-color: $white;
+}
+
+// HEADINGS
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  line-height: 1.2;
+}
+
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.75rem; }
+h4 { font-size: 1.5rem; }
+h5 { font-size: 1.25rem; }
+h6 { font-size: 1rem; }
+
+// TEXT ELEMENTS
+p {
+  margin-bottom: 1rem;
+}
+
+small {
+  font-size: 0.875em;
+}
+
+strong {
+  font-weight: bold;
+}
+
+em {
+  font-style: italic;
+}
+
+// TEXT UTILITIES
+.text-muted {
+  color: $secondary !important;
+}
+
+.text-primary {
+  color: $primary !important;
+}
+
+.text-uppercase {
+  text-transform: uppercase !important;
+}
