@@ -1,5 +1,7 @@
 
 
+@use "sass:color";
+
 // ========================================
 // BUTTONS
 // ========================================
@@ -24,10 +26,9 @@
   color: #fff;
   background-color: #007bff;
   border-color: #007bff;
-
   &:hover {
-    background-color: darken(#007bff, 7%);
-    border-color: darken(#007bff, 10%);
+    background-color: color.adjust(#007bff, $lightness: -7%);
+    border-color: color.adjust(#007bff, $lightness: -10%);
   }
 }
 
@@ -35,10 +36,9 @@
   color: #fff;
   background-color: #6c757d;
   border-color: #6c757d;
-
   &:hover {
-    background-color: darken(#6c757d, 7%);
-    border-color: darken(#6c757d, 10%);
+    background-color: color.adjust(#6c757d, $lightness: -7%);
+    border-color: color.adjust(#6c757d, $lightness: -10%);
   }
 }
 
