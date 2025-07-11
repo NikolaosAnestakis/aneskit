@@ -1,0 +1,48 @@
+
+
+// ========================================
+// LAYOUT
+// ========================================
+
+// CONTAINER
+.container {
+  width: 100%;
+  padding-right: $spacer;
+  padding-left: $spacer;
+  margin-right: auto;
+  margin-left: auto;
+
+  @include respond(md) {
+    max-width: 720px;
+  }
+
+  @include respond(lg) {
+    max-width: 960px;
+  }
+
+  @include respond(xl) {
+    max-width: 1140px;
+  }
+}
+
+// CONTAINER-FLUID
+.container-fluid {
+  width: 100%;
+  padding-right: $spacer;
+  padding-left: $spacer;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+// WRAPPERS
+.section {
+  padding: 3rem 0;
+}
+
+.section-sm {
+  padding: 1.5rem 0;
+}
+
+.section-lg {
+  padding: 4.5rem 0;
+}
