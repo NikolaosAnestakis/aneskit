@@ -12,6 +12,9 @@
     "build:css": "sass --no-source-map --style=expanded scss/main.scss dist/aneskit.css && node scripts/add-banner.mjs dist/aneskit.css",
     "build:css:min": "sass --no-source-map --style=compressed scss/main.scss dist/aneskit.min.css && node scripts/add-banner.mjs dist/aneskit.min.css",
     "build": "npm run clean && mkdir -p dist && npm run build:css && npm run build:css:min",
+    "gate": "node scripts/release-gate.mjs",
+    "gate:json": "node scripts/release-gate.mjs --json",
+    "release:dry-run": "node scripts/release.mjs --dry-run",
     "prepublishOnly": "npm run build"
   },
   "repository": {
