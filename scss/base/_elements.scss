@@ -1,0 +1,32 @@
+@use "../tokens" as t;
+
+body {
+  font-family: t.$font-family-base;
+  font-size: t.$font-size-base;
+  line-height: t.$line-height-base;
+  color: t.$color-dark;
+  background-color: t.$color-white;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: t.$font-weight-semibold;
+  line-height: t.$line-height-heading;
+  margin-bottom: map-get(t.$space-scale, 2);
+}
+
+h1 { font-size: map-get(t.$heading-scale, h1); }
+h2 { font-size: map-get(t.$heading-scale, h2); }
+h3 { font-size: map-get(t.$heading-scale, h3); }
+h4 { font-size: map-get(t.$heading-scale, h4); }
+h5 { font-size: map-get(t.$heading-scale, h5); }
+h6 { font-size: map-get(t.$heading-scale, h6); }
+
+p {
+  color: t.$color-dark;
+  margin-bottom: map-get(t.$space-scale, 4);
+}
