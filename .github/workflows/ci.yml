@@ -44,20 +44,5 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Run release gate (JSON)
-        shell: bash
-        run: |
-          node scripts/release-gate.mjs --json > gate.json || true
-          cat gate.json
-
-      - name: Enforce APPROVED status
-        shell: bash
-        run: |
-          STATUS=$(node -e "const fs=require('fs');const g=JSON.parse(fs.readFileSync('gate.json','utf8'));console.log(g.status);")
-          CLASSIFICATION=$(node -e "const fs=require('fs');const g=JSON.parse(fs.readFileSync('gate.json','utf8'));console.log(g.classification);")
-          echo "classification=${CLASSIFICATION}" >> "$GITHUB_STEP_SUMMARY"
-          echo "status=${STATUS}" >> "$GITHUB_STEP_SUMMARY"
-          if [ "$STATUS" != "APPROVED" ]; then
-            echo "Release gate blocked with status: $STATUS"
-            exit 1
-          fi
+      - name: Run release gate
+        run: node scripts/release-gate.mjs
