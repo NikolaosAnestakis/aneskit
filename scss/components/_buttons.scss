@@ -1,0 +1,51 @@
+@use "sass:color";
+@use "../tokens" as t;
+
+.btn {
+  display: inline-block;
+  font-family: t.$font-family-base;
+  font-size: t.$font-size-base;
+  line-height: t.$line-height-base;
+  font-weight: t.$font-weight-normal;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+  padding: map-get(t.$space-scale, 2) map-get(t.$space-scale, 3);
+  transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, color 0.15s ease-in-out;
+}
+
+.btn-primary {
+  color: t.$color-white;
+  background-color: t.$color-primary;
+  border-color: t.$color-primary;
+}
+
+.btn-primary:hover {
+  background-color: color.adjust(t.$color-primary, $lightness: -7%);
+  border-color: color.adjust(t.$color-primary, $lightness: -10%);
+}
+
+.btn-secondary {
+  color: t.$color-white;
+  background-color: t.$color-secondary;
+  border-color: t.$color-secondary;
+}
+
+.btn-secondary:hover {
+  background-color: color.adjust(t.$color-secondary, $lightness: -7%);
+  border-color: color.adjust(t.$color-secondary, $lightness: -10%);
+}
+
+.btn-outline-primary {
+  color: t.$color-primary;
+  background-color: transparent;
+  border-color: t.$color-primary;
+}
+
+.btn-outline-primary:hover {
+  color: t.$color-white;
+  background-color: t.$color-primary;
+  border-color: t.$color-primary;
+}

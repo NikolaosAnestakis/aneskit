@@ -1,0 +1,48 @@
+@use "../tokens" as t;
+
+input,
+textarea,
+select,
+button {
+  font-family: t.$font-family-base;
+  font-size: t.$font-size-base;
+  line-height: t.$line-height-base;
+  margin: 0;
+  padding: map-get(t.$space-scale, 2) map-get(t.$space-scale, 3);
+  border: 1px solid t.$color-border;
+  border-radius: 0.25rem;
+  background-color: t.$color-white;
+  color: t.$color-dark;
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: t.$color-primary;
+  box-shadow: 0 0 0 0.2rem t.$color-focus-ring;
+}
+
+label {
+  display: inline-block;
+  margin-bottom: map-get(t.$space-scale, 2);
+  font-weight: t.$font-weight-medium;
+}
+
+.form-group {
+  margin-bottom: map-get(t.$space-scale, 4);
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  width: auto;
+  margin-right: map-get(t.$space-scale, 2);
+  display: inline-block;
+}
+
+button {
+  cursor: pointer;
+}

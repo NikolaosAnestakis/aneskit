@@ -1,0 +1,17 @@
+@use "../tokens" as t;
+
+.card {
+  background-color: t.$color-white;
+  border: 1px solid t.$color-border;
+  border-radius: 0.25rem;
+  padding: map-get(t.$space-scale, 4);
+}
+
+.card-title {
+  color: t.$color-dark;
+  font-weight: t.$font-weight-semibold;
+}
+
+.card-text {
+  color: t.$color-secondary;
+}
