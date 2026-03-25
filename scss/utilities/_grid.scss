@@ -4,13 +4,6 @@
 .row {
   display: flex;
   flex-wrap: wrap;
-  margin-left: calc(-1 * map-get(t.$space-scale, 2));
-  margin-right: calc(-1 * map-get(t.$space-scale, 2));
-}
-
-[class*="col-"] {
-  padding-left: map-get(t.$space-scale, 2);
-  padding-right: map-get(t.$space-scale, 2);
 }
 
 @for $i from 1 through 12 {
