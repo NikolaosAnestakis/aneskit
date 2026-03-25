@@ -8,8 +8,8 @@
 
 @for $i from 1 through 12 {
   .col-#{$i} {
-    flex: 0 0 percentage(math.div($i, 12));
-    max-width: percentage(math.div($i, 12));
+    flex: 0 0 math.percentage(math.div($i, 12));
+    max-width: math.percentage(math.div($i, 12));
   }
 }
 
@@ -23,8 +23,8 @@
   @media (min-width: $value) {
     @for $i from 1 through 12 {
       .col-#{$breakpoint}-#{$i} {
-        flex: 0 0 percentage(math.div($i, 12));
-        max-width: percentage(math.div($i, 12));
+        flex: 0 0 math.percentage(math.div($i, 12));
+        max-width: math.percentage(math.div($i, 12));
       }
 
       .grid-cols-#{$breakpoint}-#{$i} {

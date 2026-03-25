@@ -1,3 +1,4 @@
+@use "sass:map";
 @use "../tokens" as t;
 
 body {
@@ -18,12 +19,12 @@ h6 {
   line-height: t.$line-height-heading;
 }
 
-h1 { font-size: map-get(t.$heading-scale, h1); }
-h2 { font-size: map-get(t.$heading-scale, h2); }
-h3 { font-size: map-get(t.$heading-scale, h3); }
-h4 { font-size: map-get(t.$heading-scale, h4); }
-h5 { font-size: map-get(t.$heading-scale, h5); }
-h6 { font-size: map-get(t.$heading-scale, h6); }
+h1 { font-size: map.get(t.$heading-scale, h1); }
+h2 { font-size: map.get(t.$heading-scale, h2); }
+h3 { font-size: map.get(t.$heading-scale, h3); }
+h4 { font-size: map.get(t.$heading-scale, h4); }
+h5 { font-size: map.get(t.$heading-scale, h5); }
+h6 { font-size: map.get(t.$heading-scale, h6); }
 
 p {
   color: t.$color-dark;
