@@ -150,12 +150,6 @@ if (!baselineTag) {
 
 const baselineVersion = baselineTag ? baselineTag.replace(/^v/, "") : "0.0.0";
 const versionChange = getBumpType(baselineVersion, currentVersion);
-if (versionChange === "invalid") {
-  violations.push(`Invalid semver values (baseline=${baselineVersion}, current=${currentVersion}).`);
-}
-if (versionChange === "downgrade") {
-  violations.push(`Version downgrade detected (${baselineVersion} -> ${currentVersion}).`);
-}
 
 let classification = "NONE";
 let addedSelectors = [];
@@ -224,33 +218,42 @@ if (baselineTag && fileExists("dist/aneskit.css") && fileExists("dist/aneskit.mi
   }
 }
 
-if (refType === "tag") {
-  const sha = process.env.GITHUB_SHA || "HEAD";
-  const branches = safeRun(`git branch -r --contains ${sha}`);
-  if (!branches.includes("origin/main")) {
-    violations.push("Tag commit is not contained in origin/main. Tags must be created via PR merge only.");
+if (classification !== "NONE") {
+  if (versionChange === "invalid") {
+    violations.push(`Invalid semver values (baseline=${baselineVersion}, current=${currentVersion}).`);
   }
-  if (refName && refName !== currentTagName) {
-    violations.push(`Tag name (${refName}) does not match package.json version (${currentTagName}).`);
+  if (versionChange === "downgrade") {
+    violations.push(`Version downgrade detected (${baselineVersion} -> ${currentVersion}).`);
   }
-}
 
-const changelog = readText("CHANGELOG.md");
-if (versionChange !== "none") {
-  const entry = extractVersionEntry(changelog, currentVersion);
-  if (!entry) {
-    violations.push(`CHANGELOG.md missing entry for version ${currentVersion}.`);
-  } else {
-    for (const section of ["### Added", "### Changed", "### Fixed", "### Breaking Changes"]) {
-      if (!entry.includes(section)) {
-        violations.push(`CHANGELOG entry ${currentVersion} missing section: ${section}`);
-      }
+  if (refType === "tag") {
+    const sha = process.env.GITHUB_SHA || "HEAD";
+    const branches = safeRun(`git branch -r --contains ${sha}`);
+    if (!branches.includes("origin/main")) {
+      violations.push("Tag commit is not contained in origin/main. Tags must be created via PR merge only.");
     }
-    if (classification === "BREAKING") {
-      const m = entry.match(/### Breaking Changes([\s\S]*)/);
-      const text = m ? m[1].trim() : "";
-      if (!text || /none\.?$/i.test(text)) {
-        violations.push("BREAKING changes detected but CHANGELOG breaking section is empty/None.");
+    if (refName && refName !== currentTagName) {
+      violations.push(`Tag name (${refName}) does not match package.json version (${currentTagName}).`);
+    }
+  }
+
+  const changelog = readText("CHANGELOG.md");
+  if (versionChange !== "none") {
+    const entry = extractVersionEntry(changelog, currentVersion);
+    if (!entry) {
+      violations.push(`CHANGELOG.md missing entry for version ${currentVersion}.`);
+    } else {
+      for (const section of ["### Added", "### Changed", "### Fixed", "### Breaking Changes"]) {
+        if (!entry.includes(section)) {
+          violations.push(`CHANGELOG entry ${currentVersion} missing section: ${section}`);
+        }
+      }
+      if (classification === "BREAKING") {
+        const m = entry.match(/### Breaking Changes([\s\S]*)/);
+        const text = m ? m[1].trim() : "";
+        if (!text || /none\.?$/i.test(text)) {
+          violations.push("BREAKING changes detected but CHANGELOG breaking section is empty/None.");
+        }
       }
     }
   }
