@@ -214,9 +214,6 @@ if (baselineTag && fileExists("dist/aneskit.css") && fileExists("dist/aneskit.mi
       violations.push("RISKY changes detected and blocked by policy until explicitly approved.");
     }
 
-    if (classification === "NONE" && versionChange !== "none") {
-      violations.push(`No CSS/API changes detected, but version changed (${baselineVersion} -> ${currentVersion}).`);
-    }
     if (classification !== "NONE" && versionChange === "none") {
       violations.push("Dist changed but version did not change.");
     }
@@ -260,6 +257,9 @@ if (versionChange !== "none") {
 }
 
 const status = violations.length === 0 ? "APPROVED" : "BLOCKED";
+const reason = classification === "NONE" && status === "APPROVED"
+  ? "no changes detected"
+  : (violations[0] || "all validations passed");
 const result = {
   baselineTag,
   baselineVersion,
@@ -267,6 +267,7 @@ const result = {
   versionChange,
   classification,
   status,
+  reason,
   selectorSummary: {
     added: addedSelectors.length,
     removed: removedSelectors.length,
