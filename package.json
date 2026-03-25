@@ -1,6 +1,6 @@
 {
   "name": "aneskit",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A modular SCSS/CSS utility and component framework.",
   "main": "dist/aneskit.css",
   "style": "dist/aneskit.css",

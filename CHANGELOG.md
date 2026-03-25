@@ -1,3 +1,17 @@
+## [1.0.1]
+
+### Added
+- Deterministic release header in distributed CSS artifacts with package version and repository URL.
+
+### Changed
+- Hardened build pipeline to prepend release banner to both `dist/aneskit.css` and `dist/aneskit.min.css`.
+
+### Fixed
+- Release packaging consistency by ensuring generated CSS reflects the shipped semantic version.
+
+### Breaking Changes
+- None.
+
 ## [1.0.0]
 
 ### Added
