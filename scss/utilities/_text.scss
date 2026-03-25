@@ -1,0 +1,7 @@
+@use "../tokens" as t;
+
+.text-primary { color: t.$color-primary !important; }
+.text-muted { color: t.$color-secondary !important; }
+.text-left { text-align: left !important; }
+.text-center { text-align: center !important; }
+.text-right { text-align: right !important; }
