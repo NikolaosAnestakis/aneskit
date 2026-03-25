@@ -256,6 +256,10 @@ if (versionChange !== "none") {
   }
 }
 
+console.log("DEBUG classification:", classification);
+console.log("DEBUG versionChange:", versionChange);
+console.log("DEBUG violations:", JSON.stringify(violations, null, 2));
+
 const status = violations.length === 0 ? "APPROVED" : "BLOCKED";
 const reason = classification === "NONE" && status === "APPROVED"
   ? "no changes detected"
