@@ -1,48 +1,42 @@
 @use "../tokens" as t;
 
-input,
-textarea,
-select,
-button {
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: map-get(t.$space-scale, 1);
+}
+
+.form-label {
+  font-weight: t.$font-weight-medium;
+}
+
+.form-control,
+.form-select,
+.form-textarea {
   font-family: t.$font-family-base;
   font-size: t.$font-size-base;
   line-height: t.$line-height-base;
-  margin: 0;
-  padding: map-get(t.$space-scale, 2) map-get(t.$space-scale, 3);
+  color: t.$color-dark;
+  background-color: t.$color-white;
   border: 1px solid t.$color-border;
   border-radius: 0.25rem;
-  background-color: t.$color-white;
-  color: t.$color-dark;
-  display: block;
-  width: 100%;
-  box-sizing: border-box;
+  padding: map-get(t.$space-scale, 2) map-get(t.$space-scale, 3);
 }
 
-input:focus,
-textarea:focus,
-select:focus {
+.form-control:focus,
+.form-select:focus,
+.form-textarea:focus {
   outline: none;
   border-color: t.$color-primary;
   box-shadow: 0 0 0 0.2rem t.$color-focus-ring;
 }
 
-label {
-  display: inline-block;
-  margin-bottom: map-get(t.$space-scale, 2);
-  font-weight: t.$font-weight-medium;
+.form-check {
+  display: inline-flex;
+  align-items: center;
+  gap: map-get(t.$space-scale, 1);
 }
 
-.form-group {
-  margin-bottom: map-get(t.$space-scale, 4);
-}
-
-input[type="checkbox"],
-input[type="radio"] {
-  width: auto;
-  margin-right: map-get(t.$space-scale, 2);
-  display: inline-block;
-}
-
-button {
-  cursor: pointer;
+.form-check-input {
+  margin: 0;
 }
