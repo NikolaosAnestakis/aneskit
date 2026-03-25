@@ -1,17 +1,4 @@
-// ========================================
-// AnesKit SCSS Framework
-// ========================================
-
-// 1. Core
-@import "variables";
-@import "mixins";
-
-// 2. Base
-@import "typography";
-@import "utilities";
-@import "buttons";
-@import "forms";
-
-
-// 3. Layout
-@import "grid";
+@use "tokens";
+@use "base";
+@use "utilities";
+@use "components";
