@@ -16,7 +16,6 @@ h5,
 h6 {
   font-weight: t.$font-weight-semibold;
   line-height: t.$line-height-heading;
-  margin-bottom: map-get(t.$space-scale, 2);
 }
 
 h1 { font-size: map-get(t.$heading-scale, h1); }
@@ -28,5 +27,4 @@ h6 { font-size: map-get(t.$heading-scale, h6); }
 
 p {
   color: t.$color-dark;
-  margin-bottom: map-get(t.$space-scale, 4);
 }
