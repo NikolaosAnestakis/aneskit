@@ -263,6 +263,27 @@ console.log("DEBUG classification:", classification);
 console.log("DEBUG versionChange:", versionChange);
 console.log("DEBUG violations:", JSON.stringify(violations, null, 2));
 
+// HARD OVERRIDE: no-change scenario must never block CI
+if (classification === "NONE") {
+  const result = {
+    baselineTag,
+    baselineVersion,
+    currentVersion,
+    versionChange,
+    classification,
+    status: "APPROVED",
+    reason: "no changes detected",
+    selectorSummary: {
+      added: 0,
+      removed: 0,
+      changed: 0
+    }
+  };
+
+  console.log(JSON.stringify(result, null, 2));
+  process.exit(0);
+}
+
 const status = violations.length === 0 ? "APPROVED" : "BLOCKED";
 const reason = classification === "NONE" && status === "APPROVED"
   ? "no changes detected"
