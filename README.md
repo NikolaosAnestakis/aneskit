@@ -7,13 +7,13 @@ AnesKit is a reusable CSS framework packaged for multi-project use.
 ### npm registry
 
 ```bash
-npm install aneskit@1.0.1
+npm install aneskit@2.0.1
 ```
 
 ### Git tag
 
 ```bash
-npm install github:nikolaosanestakis/aneskit#v1.0.1
+npm install github:nikolaosanestakis/aneskit#v2.0.1
 ```
 
 ## Usage
@@ -47,7 +47,7 @@ Build output:
 1. Project A installs a pinned stable release:
 
 ```bash
-npm install aneskit@1.0.1
+npm install aneskit@2.0.1
 ```
 
 2. Framework releases `1.1.0` with backward-compatible additions.
