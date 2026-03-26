@@ -1,0 +1,10 @@
+name: CI Gate
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  call-ci:
+    uses: NikolaosAnestakis/release-governance-core/.github/workflows/ci.yml@v1.1.0
