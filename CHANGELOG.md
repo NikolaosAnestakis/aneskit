@@ -1,5 +1,14 @@
 ## [2.0.0]
 
+### Added
+- None
+
+### Changed
+- Updated spacing utility logic
+
+### Fixed
+- None
+
 ### Breaking Changes
 - Updated spacing scale: `.m-4` margin changed from 1rem to 1.125rem
 
