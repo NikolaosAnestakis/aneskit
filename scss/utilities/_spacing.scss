@@ -1,7 +1,7 @@
 @use "../tokens" as t;
 
 @each $key, $value in t.$space-scale {
-  .m-#{$key} { margin: $value !important; }
+  .m-#{$key} { margin: if($key == 4, 1.125rem, $value) !important; }
   .mt-#{$key} { margin-top: $value !important; }
   .mb-#{$key} { margin-bottom: $value !important; }
   .ml-#{$key} { margin-left: $value !important; }

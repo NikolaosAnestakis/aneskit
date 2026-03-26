@@ -1,3 +1,8 @@
+## [2.0.0]
+
+### Breaking Changes
+- Updated spacing scale: `.m-4` margin changed from 1rem to 1.125rem
+
 ## [1.0.1]
 
 ### Added

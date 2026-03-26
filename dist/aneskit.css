@@ -1,5 +1,5 @@
 /*!
- * aneskit v1.0.1
+ * aneskit v2.0.0
  * https://github.com/nikolaosanestakis/aneskit
  */
 *,
@@ -228,7 +228,7 @@ p {
 }
 
 .m-4 {
-  margin: 1rem !important;
+  margin: 1.125rem !important;
 }
 
 .mt-4 {
