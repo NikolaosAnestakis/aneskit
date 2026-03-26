@@ -7,4 +7,4 @@ on:
 
 jobs:
   validate:
-    uses: NikolaosAnestakis/release-governance-core/.github/workflows/ci.yml@v1.0.0
+    uses: NikolaosAnestakis/release-governance-core/.github/workflows/ci.yml@v1.1.0
