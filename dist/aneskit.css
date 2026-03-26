@@ -188,43 +188,43 @@ p {
 }
 
 .m-3 {
-  margin: 0.75rem !important;
+  margin: 1.05rem !important;
 }
 
 .mt-3 {
-  margin-top: 0.75rem !important;
+  margin-top: 1.05rem !important;
 }
 
 .mb-3 {
-  margin-bottom: 0.75rem !important;
+  margin-bottom: 1.05rem !important;
 }
 
 .ml-3 {
-  margin-left: 0.75rem !important;
+  margin-left: 1.05rem !important;
 }
 
 .mr-3 {
-  margin-right: 0.75rem !important;
+  margin-right: 1.05rem !important;
 }
 
 .p-3 {
-  padding: 0.75rem !important;
+  padding: 1.05rem !important;
 }
 
 .pt-3 {
-  padding-top: 0.75rem !important;
+  padding-top: 1.05rem !important;
 }
 
 .pb-3 {
-  padding-bottom: 0.75rem !important;
+  padding-bottom: 1.05rem !important;
 }
 
 .pl-3 {
-  padding-left: 0.75rem !important;
+  padding-left: 1.05rem !important;
 }
 
 .pr-3 {
-  padding-right: 0.75rem !important;
+  padding-right: 1.05rem !important;
 }
 
 .m-4 {
@@ -902,7 +902,7 @@ p {
   cursor: pointer;
   border: 1px solid transparent;
   border-radius: 0.25rem;
-  padding: 0.5rem 0.75rem;
+  padding: 0.5rem 1.05rem;
   transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, color 0.15s ease-in-out;
 }
 
@@ -960,7 +960,7 @@ p {
   background-color: #ffffff;
   border: 1px solid #ced4da;
   border-radius: 0.25rem;
-  padding: 0.5rem 0.75rem;
+  padding: 0.5rem 1.05rem;
 }
 
 .form-control:focus,
