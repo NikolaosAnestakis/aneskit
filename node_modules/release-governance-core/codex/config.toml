@@ -1,0 +1,11 @@
+model = "gpt-5.3-codex"
+model_reasoning_effort = "high"
+
+approval_mode = "suggest"
+
+auto_run_tests = true
+auto_fix_lint = true
+
+[project]
+enforce_git_rules = true
+enforce_release_gate = true

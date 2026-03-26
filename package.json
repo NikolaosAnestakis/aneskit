@@ -1,6 +1,6 @@
 {
   "name": "aneskit",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "A modular SCSS/CSS utility and component framework.",
   "main": "dist/aneskit.css",
   "style": "dist/aneskit.css",
@@ -12,10 +12,13 @@
     "build:css": "sass --no-source-map --style=expanded scss/main.scss dist/aneskit.css && node scripts/add-banner.mjs dist/aneskit.css",
     "build:css:min": "sass --no-source-map --style=compressed scss/main.scss dist/aneskit.min.css && node scripts/add-banner.mjs dist/aneskit.min.css",
     "build": "npm run clean && mkdir -p dist && npm run build:css && npm run build:css:min",
-    "gate": "node scripts/release-gate.mjs",
-    "gate:json": "node scripts/release-gate.mjs --json",
-    "release:dry-run": "node scripts/release.mjs --dry-run",
-    "prepublishOnly": "npm run build"
+    "validate": "bash scripts/pre-commit-check.sh",
+    "validate:relaxed": "cross-env GATE_MODE=relaxed npm run validate",
+    "gate": "node node_modules/release-governance-core/scripts/release-gate.mjs",
+    "gate:json": "node node_modules/release-governance-core/scripts/release-gate.mjs --json",
+    "release:dry-run": "node node_modules/release-governance-core/scripts/release.mjs --dry-run",
+    "prepublishOnly": "npm run build",
+    "prepare": "husky install"
   },
   "repository": {
     "type": "git",
@@ -36,6 +39,9 @@
   },
   "homepage": "https://github.com/nikolaosanestakis/aneskit#readme",
   "devDependencies": {
+    "cross-env": "^10.1.0",
+    "husky": "^9.1.7",
+    "release-governance-core": "github:NikolaosAnestakis/release-governance-core#v1.1.0",
     "sass": "^1.93.2"
   }
 }

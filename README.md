@@ -91,9 +91,67 @@ Required repository settings:
 Dry-run locally:
 
 ```bash
-node scripts/release.mjs --dry-run
+node node_modules/release-governance-core/scripts/release.mjs --dry-run
 ```
 
 Rollback guidance:
 - If publish fails before npm publish, delete the release commit/tag in a follow-up corrective commit process.
 - If npm publish succeeds, never republish the same version; ship a new patch release.
+
+## Contribution Enforcement
+
+Before committing:
+
+```bash
+npm run validate
+```
+
+CI will block invalid changes automatically.
+
+## Git Hooks (Enforced)
+
+This project uses Husky to enforce validation automatically.
+
+On install:
+
+```bash
+npm install
+```
+
+Hooks will be installed automatically.
+
+All commits must pass:
+
+```bash
+npm run validate
+```
+
+## Release Governance
+
+Releases require manual approval via the `release` environment.
+
+Each release includes:
+- version
+- classification
+- commit reference
+- approval checkpoint
+
+Core module installation pattern for other repositories:
+
+```bash
+npm install github:<your-username>/release-governance-core
+```
+
+## Governance Upgrade
+
+- Update dependency version
+- Run validate
+- Fix violations
+- Merge via PR
+
+Controlled process:
+1. Create branch: `chore/upgrade-governance`
+2. Update `release-governance-core` tag (pinned, no floating versions)
+3. Run `npm install`
+4. Run `npm run validate` (or `npm run validate:relaxed` for opt-in compatibility checks)
+5. Fix violations and merge only after CI passes

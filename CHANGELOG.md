@@ -1,3 +1,17 @@
+## [2.0.1]
+
+### Added
+- Added pre-commit validation workflow and governance scripts for stricter release readiness checks.
+
+### Changed
+- Finalized release-governance integration and package structure cleanup.
+
+### Fixed
+- Ensured dist artifacts are rebuilt consistently during governance checks.
+
+### Breaking Changes
+- Updated spacing scale: `.m-4` margin changed from 1rem to 1.125rem.
+
 ## [2.0.0]
 
 ### Added
