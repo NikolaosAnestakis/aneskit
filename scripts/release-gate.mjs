@@ -194,8 +194,8 @@ if (baselineTag && fileExists("dist/aneskit.css") && fileExists("dist/aneskit.mi
     if (removedSelectors.length > 0) {
       violations.push(`Removed selectors detected (${removedSelectors.length}).`);
     }
-    if (changedClassSelectors.length > 0) {
-      violations.push(`Existing class behavior changed (${changedClassSelectors.length} class selectors with value diffs).`);
+    if (changedClassSelectors.length > 0 && versionChange !== "major") {
+      violations.push("Existing class behavior changed but MAJOR version bump is missing.");
     }
 
     if (classification === "BREAKING" && versionChange !== "major") {
